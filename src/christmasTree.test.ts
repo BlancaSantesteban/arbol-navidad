@@ -1,7 +1,7 @@
 import { christmasTree } from './christmasTree';
 
 describe('Árbol Navidad', () => {
-  it('Tiene altura uno', () => {
+  it('tiene altura uno', () => {
     const arbol = christmasTree(1);
 
     expect(arbol).toEqual('*');
@@ -18,4 +18,5 @@ describe('Árbol Navidad', () => {
 
     expect(arbol).toEqual('*\n***\n*****');
   });
+ 
 });
