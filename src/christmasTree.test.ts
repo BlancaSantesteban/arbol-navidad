@@ -10,13 +10,18 @@ describe('Árbol Navidad', () => {
   it('tiene altura dos', () => {
     const arbol = christmasTree(2);
 
-    expect(arbol).toEqual('*\n***');
+    expect(arbol).toEqual(' *\n***');
   });
 
   it('tiene altura tres', () => {
     const arbol = christmasTree(3);
 
-    expect(arbol).toEqual('*\n***\n*****');
+    expect(arbol).toEqual('  *\n ***\n*****');
+  });
+  it('tiene altura cinco', () => {
+    const arbol = christmasTree(5);
+
+    expect(arbol).toEqual('    *\n   ***\n  *****\n *******\n*********');
   });
  
 });

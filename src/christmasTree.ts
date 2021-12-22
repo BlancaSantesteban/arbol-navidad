@@ -1,27 +1,13 @@
 export function christmasTree(height: number) {
 
-    let tree="*";
+    let tree=' '.repeat(height-1)+"*";
         for(let i=1;i!=height;i++){
-            tree+="\n"+tree.repeat((i*2)+1);
+            if(height-i==1){
+                tree+="\n"+'*'.repeat((i*2)+1);
+                break;
+            }
+            tree+="\n"+' '.repeat((height-1)-i)+'*'.repeat((i*2)+1);
+           
         }
-    return tree;
-    
+    return tree;  
 }
-/*
-
-if (height === 5) {
-    return '*\n***\n*****\n*******\n*********';
-    }
-if (height === 4) {
-    return '*\n***\n*****\n*******';
-    }
-  if (height === 3) {
-    return '*\n***\n*****';
-  }
-
-  if (height == 2) {
-    return '*\n***';
-  }
-
-  return '*';
-*/
