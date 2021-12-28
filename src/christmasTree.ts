@@ -1,10 +1,14 @@
 export function christmasTree(height: number) {
-  let tree: string = getAir(height) + getLeafs(0);
+  let tree: string = '';
 
-  for (let floor = 1; floor !== height; floor++) {
+  for (let floor = 0; floor !== height; floor++) {
     const isLastFloor = height - floor === 1;
 
-    tree += '\n' + getAir(height, floor) + getLeafs(floor);
+    if (floor !== 0) {
+      tree += '\n';
+    }
+
+    tree += getAir(height, floor) + getLeafs(floor);
   }
 
   return tree;
