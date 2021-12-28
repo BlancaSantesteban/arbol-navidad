@@ -1,7 +1,7 @@
 export function christmasTree(height: number) {
   let tree: string = '';
 
-  for (let floor = 0; floor !== height; floor++) {
+  for (let floor = 0; floor < height; floor++) {
     const isTopOfTree = floor === 0;
     if (!isTopOfTree) {
       tree += '\n';
