@@ -1,5 +1,5 @@
 export function christmasTree(height: number) {
-  let tree: string = ' '.repeat(height - 1) + '*';
+  let tree: string = getAir(height) + getLeafs(0);
 
   for (let floor = 1; floor !== height; floor++) {
     const isLastFloor = height - floor === 1;
@@ -18,6 +18,6 @@ function getLeafs(floor: number) {
   return '*'.repeat(floor * 2 + 1);
 }
 
-function getAir(height: number, floor: number) {
+function getAir(height: number, floor: number = 0) {
   return ' '.repeat(height - 1 - floor);
 }
