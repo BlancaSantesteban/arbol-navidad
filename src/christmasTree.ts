@@ -8,7 +8,7 @@ export function christmasTree(height: number) {
       tree += '\n' + getLeafs(i);
       return tree;
     }
-    tree += '\n' + ' '.repeat(height - 1 - i) + getLeafs(i);
+    tree += '\n' + getAir(height, i) + getLeafs(i);
   }
 
   return tree;
@@ -16,4 +16,8 @@ export function christmasTree(height: number) {
 
 function getLeafs(floor: number) {
   return '*'.repeat(floor * 2 + 1);
+}
+
+function getAir(height: number, floor: number) {
+  return ' '.repeat(height - 1 - floor);
 }
