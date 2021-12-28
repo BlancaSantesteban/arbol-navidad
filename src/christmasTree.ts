@@ -1,16 +1,27 @@
 export function christmasTree(height: number) {
-  let tree: string = '';
+  const floors = [...Array(height).keys()];
 
-  for (let floor = 0; floor < height; floor++) {
+  return floors.reduce((tree, floor) => {
     const isTopOfTree = floor === 0;
-    if (!isTopOfTree) {
-      tree += '\n';
-    }
 
     const air = ' '.repeat(height - 1 - floor);
     const leafs = '*'.repeat(floor * 2 + 1);
-    tree += air + leafs;
-  }
-
-  return tree;
+    return isTopOfTree ? tree + air + leafs : tree + '\n' + air + leafs;
+  }, '');
 }
+
+/**
+ * EJEMPLO DE REDUCE PARA UNA ALTURA DE 3 PISOS
+ * height = 3 => floors = [0, 1, 2]
+ *
+ * ''
+ *
+ * floor = 0; tree = ''
+ * -> '  *'
+ *
+ * floor = 1; tree = '  *'
+ * -> '  *\n ***'
+ *
+ * floor = 2; tree = '  *\n ***'
+ * -> '  *\n ***\n*****'
+ */
