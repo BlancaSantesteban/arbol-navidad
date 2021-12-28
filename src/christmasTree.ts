@@ -2,8 +2,6 @@ export function christmasTree(height: number) {
   let tree: string = '';
 
   for (let floor = 0; floor !== height; floor++) {
-    const isLastFloor = height - floor === 1;
-
     if (floor !== 0) {
       tree += '\n';
     }
